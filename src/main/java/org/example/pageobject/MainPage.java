@@ -14,20 +14,20 @@ public class MainPage {
             this.driver = driver;
         }
     //  локатор для кнопки Войти
-    private final By authorizationButton = By.xpath(".//section[2]/div/button");
+    private final By authorizationButton = By.xpath(".//*[text() = 'Войти в аккаунт']");
     //  локатор для кнопки личный кабинет
-    private final By userAccountButton = By.xpath(".//header/nav/a/p");
+    private final By userAccountButton = By.xpath("//a[@class='AppHeader_header__link__3D_hX' and @href='/account']");
     //  локаторы для соуса
-    private final By ingredientSauceButton = By.xpath(".//section[1]/div/div[2]");
+    private final By ingredientSauceButton = By.xpath("//span[text()='Соусы']/..");
     private final By checkSauceDisplayed = By.xpath(".//section[1]/div[2]/h2[2]");
     //  локаторы для булки
-    private final By ingredientBunsButton = By.xpath(".//section[1]/div/div[1]");
+    private final By ingredientBunsButton = By.xpath("//span[text()='Булки']/..");
     private final By  checkBunsDisplayed = By.xpath(".//section[1]/div[2]/h2[1]");
     // локаторы для начилки
-    private final By ingredientFillingButton = By.xpath(".//section[1]/div/div[3]");
+    private final By ingredientFillingButton = By.xpath("//span[text()='Начинки']/..");
     private final By checkFillingDisplayed = By.xpath(".//section[1]/div[2]/h2[3]");
     // локаторы для кнопки "Оформить заказ"
-    private final By orderButton = By.xpath(".//div/main/section[2]/div/button");
+    private final By orderButton = By.className("button_button__33qZ0");
 
     @Step("open main Page")
     public void openMainPage (){

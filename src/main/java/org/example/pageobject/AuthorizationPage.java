@@ -16,11 +16,11 @@ public class AuthorizationPage {
     }
 
     //  локатор для поля Email
-    private final By userEmailAuthField = By.xpath(".//form/fieldset[1]/div/div/input");
+    private final By emailField = By.xpath("//label[text()='Email']/following-sibling::input");
     //  локатор для поля Email
-    private final By userPasswordAuthField = By.xpath(".//form/fieldset[2]/div/div/input");
+    private final By passwordField = By.xpath("//input[@type='password']");
     //  локатор для кнопки Войти
-    private final By loginButton = By.xpath(".//div/main/div/form/button");
+    private final By loginButton = By.className("button_button__33qZ0");
 
     //метод авторизации
     @Step("Filling out and check the authorization form")
@@ -30,10 +30,10 @@ public class AuthorizationPage {
         }
         catch(InterruptedException ie){
         }
-        driver.findElement(userEmailAuthField).clear();
-        driver.findElement(userEmailAuthField).sendKeys(email);
-        driver.findElement(userPasswordAuthField).clear();
-        driver.findElement(userPasswordAuthField).sendKeys(password);
+        driver.findElement(emailField).clear();
+        driver.findElement(emailField).sendKeys(email);
+        driver.findElement(passwordField).clear();
+        driver.findElement(passwordField).sendKeys(password);
         new WebDriverWait(driver, Duration.ofSeconds(3)).until(ExpectedConditions.elementToBeClickable(loginButton));
         driver.findElement(loginButton).click();
     }

@@ -10,9 +10,9 @@ import java.time.Duration;
 
 public class UserAccountPage {
     private final WebDriver driver;
-    private final By exitButton = By.xpath("/html/body/div[1]/div/main/div/nav/ul/li[3]/button");
-    private final By logoButton = By.xpath("/html/body/div[1]/div/header/nav/div/a");
-    private final By constructorButton = By.xpath("/html/body/div[1]/div/header/nav/ul/li[1]/a/p");
+    private final By logoutButton = By.className("Account_button__14Yp3");
+    private final By logoButton = By.xpath("//div[@class='AppHeader_header__logo__2D0X2']/a[@href='/' ]");
+    private final By constructorButton = By.xpath("//a[@href='/' and @class='AppHeader_header__link__3D_hX']");
 
     public UserAccountPage(WebDriver driver) {
         this.driver = driver;
@@ -21,8 +21,8 @@ public class UserAccountPage {
     //	выход из аккаунта через кнопку 'выход' в личном кабинете
     @Step("Find And Click exit button on personal account")
     public void clickExitButton() {
-        new WebDriverWait(driver, Duration.ofSeconds(3)).until(ExpectedConditions.elementToBeClickable(exitButton));
-        driver.findElement(exitButton).click();
+        new WebDriverWait(driver, Duration.ofSeconds(3)).until(ExpectedConditions.elementToBeClickable(logoutButton));
+        driver.findElement(logoutButton).click();
     }
 
     //	переход на главную страницу через символ логотипа в личном кабинете
@@ -41,7 +41,7 @@ public class UserAccountPage {
 
     @Step("Find And get text from exit Button on personal account")
     public String checkLogInPersonalAccount() {
-        new WebDriverWait(driver, Duration.ofSeconds(3)).until(ExpectedConditions.visibilityOfElementLocated(exitButton));
-        return driver.findElement(exitButton).getText();
+        new WebDriverWait(driver, Duration.ofSeconds(3)).until(ExpectedConditions.visibilityOfElementLocated(logoutButton));
+        return driver.findElement(logoutButton).getText();
     }
 }
