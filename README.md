@@ -1,4 +1,4 @@
-🚀 UI tests Stellar Burgers 🚀
+🚀 **UI tests Stellar Burgers** 🚀
 
 As part of the training, I tested UI of the Stellar Burgers training service using the JUnit 4, Selenium and Allure . 
 The project used Java 11 and used the Maven build system and was tested in Google Chrome and  Yandex.Browser.
